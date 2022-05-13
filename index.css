@@ -1,0 +1,34 @@
+
+*{
+    border: thin solid red;
+}
+.bar {
+    background-color: powderblue;
+    float:left;
+    margin:0.1px;
+    position: relative;
+     transition: 0.2s all ease;
+  }
+  
+  .sorted {
+    height: 200px;
+    width: 30px;
+    background-color: red;
+    float:left;
+    margin:2px;
+  }
+
+
+
+.btn{
+    width:80px;
+    height:80px;
+}
+
+body {
+      max-width: 100em;
+      margin:0 auto;
+      background: white;
+      padding: 10px;
+  }
+  
