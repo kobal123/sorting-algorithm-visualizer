@@ -2,20 +2,29 @@ async function bubbleSort(){
 
 
 
-  let BARS = document.getElementsByClassName('bar');
+  const BARS = document.getElementsByClassName('bar');
   for(let i=0;i<GlobalArr.length-1;i++){
     for(let k=0;k<GlobalArr.length-i-1;k++){
+
       if(GlobalArr[k]>GlobalArr[k+1]){
+        if(didArrayChange)
+          return;
+
+        setElementColor(k,"red");
+        setElementColor(k+1,"red");
 
         [GlobalArr[k],GlobalArr[k+1]]=[GlobalArr[k+1],GlobalArr[k]]
         await swap(BARS[k],BARS[k+1]);
       }
-    }
-    setElementColor(GlobalArr.length - 1 -i,"red");
-  }
+      setElementColor(k,"powderblue");
+      setElementColor(k+1,"powderblue");
 
-  await sleep(500);
-  setAllElementColor("blue");
+    }
+    setElementColor(GlobalArr.length - 1 -i,"green");
+  }
+  sleep(100);
+  setElementColor(0,"green");
+
 }
 
 

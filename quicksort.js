@@ -3,8 +3,6 @@
 
 async function partition(arr, low, high) {
     let BARS = document.getElementsByClassName('bar');
-
-
     let pivot = arr[low];
     let i = low;
     setElementColor(low, "yellow")
@@ -33,13 +31,15 @@ function exchangeElements(element1, element2) {
 
         window.requestAnimationFrame(function () {
             setTimeout(() => {
+                if(!didArrayChange){
 
-                const clonedElement1 = element1.cloneNode(true);
-                const clonedElement2 = element2.cloneNode(true);
+                    const clonedElement1 = element1.cloneNode(true);
+                    const clonedElement2 = element2.cloneNode(true);
 
-                element2.parentNode.replaceChild(clonedElement1, element2);
-                element1.parentNode.replaceChild(clonedElement2, element1);
-                resolve();
+                    element2.parentNode.replaceChild(clonedElement1, element2);
+                    element1.parentNode.replaceChild(clonedElement2, element1);
+                    resolve();
+                }
             }, 1 / slider.value * 3000);
 
         });
@@ -50,14 +50,14 @@ function exchangeElements(element1, element2) {
 async function quickSortCaller() {
     await quickSort(GlobalArr, 0, GlobalArr.length);
     await sleep(500);
-    setAllElementColor("blue");
+
 }
 
 
 async function quickSort(arr, low, high) {
-    if (low < high) {
+    if (low < high && !didArrayChange) {
         let index = await partition(arr, low, high);
-        setElementColor(index, "red");
+        setElementColor(index, "green");
         await quickSort(arr, low, index);
         await quickSort(arr, index + 1, high);
     }

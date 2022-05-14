@@ -7,22 +7,29 @@
     float:left;
     margin:0.1px;
     position: relative;
-     transition: 0.2s all ease;
-  }
-  
-  .sorted {
-    height: 200px;
-    width: 30px;
-    background-color: red;
-    float:left;
-    margin:2px;
+    transition: 0.5s all ease;
   }
 
 
+input,label{
+    display: block;
+}
 
-.btn{
-    width:80px;
-    height:80px;
+#controls-container{
+    display: flex;
+}
+#slider-container{
+    display: block;
+    margin-right: 10em;
+}
+#buttons-container >button{
+    margin-right: 3em;
+}
+
+button{
+    display: inline;
+    height: 40px;
+    width: 150px;
 }
 
 body {
@@ -30,5 +37,5 @@ body {
       margin:0 auto;
       background: white;
       padding: 10px;
-  }
+}
   

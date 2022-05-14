@@ -1,25 +1,36 @@
-let bar = document.getElementById('main-bar');
-let slider = document.getElementById('slider');
-let GlobalArr = [];
+const bar = document.getElementById('main-bar');
+const slider = document.getElementById('slider');
+const GlobalArr = [];
+
+let didArrayChange = false;
+
+swapDidArrayChange = () =>{
+    didArrayChange = !didArrayChange;
+}
 
 const quickSortButton = document.getElementById("quickSort-button");
 quickSortButton.addEventListener('click', function () {
+    didArrayChange = false;
     quickSortCaller();
 });
 
 const bubbleSortButton = document.getElementById("bubbleSort-Button");
 bubbleSortButton.addEventListener('click', function () {
+    didArrayChange = false;
     bubbleSort();
 });
 
 const randomizeHeightButton = document.getElementById("randomizeHeight-Button");
 randomizeHeightButton.addEventListener('click', function () {
+    didArrayChange = true;
     changeHeight();
 });
 
 
 
+
 slider.oninput = function () {
+    didArrayChange = true;
     setBar(slider.value);
 }
 

@@ -15,15 +15,18 @@
 
 
 
-<div>
-    <h2>Set the number of elements</h2>
-    <input id="slider" type="range" min="5" max="100" value="5" >
 
+<div id="controls-container">
+    <div id = "slider-container">
+        <label id="slider-label" for="slider">Set the number of elements</label>
+        <input id="slider" type="range" min="5" max="100" value="5" >
+    </div>
 
+    <div id = "buttons-container">
         <button id="randomizeHeight-Button"  class="btn">Randomize elements</button>
-        <button id = "bubbleSort-Button"  class="btn">Bubble sort</button>
         <button id="quickSort-button" class="btn">quicksort</button>
-
+        <button id ="bubbleSort-Button" class="btn">Bubble sort</button>
+    </div>
 </div>
 
 <div id="main-bar" class="container"></div>
