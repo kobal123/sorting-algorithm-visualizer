@@ -34,7 +34,7 @@ function swap(e1,e2){
       setTimeout(() => {
         bar.insertBefore(e2, e1);
         resolve();
-      }, 2000/slider.value);
+      }, 2000/slider.value*2);
     });
 
   });

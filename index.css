@@ -1,15 +1,22 @@
 
-*{
-    border: thin solid red;
-}
+
 .bar {
     background-color: powderblue;
     float:left;
-    margin:0.1px;
     position: relative;
     transition: 0.5s all ease;
   }
 
+#main-bar{
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+}
+
+#controls-container{
+    justify-content: center;
+
+}
 
 input,label{
     display: block;
@@ -22,7 +29,7 @@ input,label{
     display: block;
     margin-right: 10em;
 }
-#buttons-container >button{
+#buttons-container > button{
     margin-right: 3em;
 }
 

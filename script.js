@@ -80,9 +80,7 @@ function changeHeight() {
     GlobalArr.length = 0;
 
     let x = document.getElementsByClassName('bar');
-    let barElement = document.getElementById('barElement');
 
-    barElement.innerHTML = "";
     for (let i = 0; i < x.length; i++) {
         let value = Math.floor(Math.random() * 600 + 20);
         x[i].style.height = value + "px";
